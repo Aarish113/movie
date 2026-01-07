@@ -16,6 +16,36 @@ body {
     overflow-x: hidden;
 }
 
+/* Global Scrollbar Styles */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.3);
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    border: 2px solid transparent;
+    background-clip: content-box;
+    transition: background 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid transparent;
+    background-clip: content-box;
+}
+
+/* For Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.1) rgba(0, 0, 0, 0.3);
+}
+
+
 /* Preloader Styles */
 #preloader {
     position: fixed;
@@ -41,7 +71,9 @@ body {
 }
 
 @keyframes spin {
-    to { transform: rotate(360deg); }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 #preloader.fade-out {
@@ -89,10 +121,11 @@ header {
     backdrop-filter: blur(25px) saturate(180%);
     -webkit-backdrop-filter: blur(25px) saturate(180%);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 70px 0;
+    padding: 40px 0;
     text-align: center;
     animation: fadeIn 1s ease-out;
 }
+
 
 header h1 {
     color: #ffffff;
@@ -115,8 +148,9 @@ header h1 {
 
 /* Main Content */
 main {
-    padding: 100px 20px;
+    padding: 40px 20px;
 }
+
 
 /* Movies Grid */
 .movies-grid {
@@ -351,7 +385,7 @@ main {
     width: 100%;
     height: 100%;
     pointer-events: none;
-    box-shadow: inset 0 0 100px rgba(0,0,0,0.5);
+    box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.5);
     z-index: 2;
 }
 
@@ -414,7 +448,7 @@ main {
 
 /* Custom Scrollbar for Modal */
 .modal-content::-webkit-scrollbar {
-    width: 6px;
+    width: 8px;
 }
 
 .modal-content::-webkit-scrollbar-track {
@@ -424,11 +458,16 @@ main {
 .modal-content::-webkit-scrollbar-thumb {
     background: rgba(255, 255, 255, 0.1);
     border-radius: 10px;
+    border: 2px solid transparent;
+    background-clip: content-box;
 }
 
 .modal-content::-webkit-scrollbar-thumb:hover {
     background: rgba(255, 255, 255, 0.2);
+    border: 2px solid transparent;
+    background-clip: content-box;
 }
+
 
 @media (max-width: 600px) {
     .modal-content {
