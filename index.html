@@ -9,11 +9,17 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="favicon.png">
     <link rel="stylesheet" href="style.css">
 </head>
 
+
 <body>
+    <div id="preloader">
+        <div class="loader-inner"></div>
+    </div>
     <header>
+
         <div class="container">
             <h1>🎬 2026 Movie Releases</h1>
             <p class="tagline">Your guide to upcoming movies</p>
@@ -118,9 +124,9 @@
                     "One of the most anticipated & highest-grossing films of the year"
                 ],
                 trailers: [
-                    "https://www.youtube.com/embed/kH1XlwHQv9o?modestbranding=1&rel=0&iv_load_policy=3&enablejsapi=1",
-                    "https://www.youtube.com/embed/1clWprLC5Ak?modestbranding=1&rel=0&iv_load_policy=3&enablejsapi=1",
-                    "https://www.youtube.com/embed/UiMg566PREA?modestbranding=1&rel=0&iv_load_policy=3&enablejsapi=1"
+                    "https://www.youtube.com/embed/kH1XlwHQv9o",
+                    "https://www.youtube.com/embed/1clWprLC5Ak",
+                    "https://www.youtube.com/embed/UiMg566PREA"
                 ]
             },
             dune: {
@@ -160,7 +166,7 @@
                     "Filmed entirely on IMAX 70 mm, making it a major visual event"
                 ],
                 trailers: [
-                    "https://www.youtube.com/embed/Mzw2ttJD2qQ?modestbranding=1&rel=0&iv_load_policy=3&enablejsapi=1"
+                    "https://www.youtube.com/embed/Mzw2ttJD2qQ"
                 ]
             }
         };
@@ -190,12 +196,23 @@
             // Handle trailers
             if (data.trailers && data.trailers.length > 0) {
                 trailersSection.style.display = 'block';
-                modalTrailers.innerHTML = data.trailers.map(url => `
-                    <div class="video-container">
-                        <iframe src="${url}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                    </div>
-                `).join('');
+                modalTrailers.innerHTML = data.trailers.map(url => {
+                    const videoUrl = new URL(url);
+                    videoUrl.searchParams.set('modestbranding', '1');
+                    videoUrl.searchParams.set('rel', '0');
+                    videoUrl.searchParams.set('iv_load_policy', '3');
+                    videoUrl.searchParams.set('enablejsapi', '1');
+                    videoUrl.searchParams.set('origin', window.location.origin);
+                    videoUrl.searchParams.set('widgetid', '1');
+                    
+                    return `
+                        <div class="video-container">
+                            <iframe src="${videoUrl.toString()}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                    `;
+                }).join('');
             } else {
+
                 trailersSection.style.display = 'none';
                 modalTrailers.innerHTML = '';
             }
@@ -223,7 +240,19 @@
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape' && modalOverlay.classList.contains('active')) hideModal();
         });
+
+        // Preloader smooth exit
+        window.addEventListener('load', () => {
+            const preloader = document.getElementById('preloader');
+            setTimeout(() => {
+                preloader.classList.add('fade-out');
+                setTimeout(() => {
+                    preloader.remove();
+                }, 800);
+            }, 500); // Slight delay for aesthetic feel
+        });
     </script>
+
 </body>
 
 </html>
