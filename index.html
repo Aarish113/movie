@@ -26,8 +26,7 @@
             <!-- Movie Box 1 -->
             <div class="movie-box" id="avengersBox">
                 <div class="movie-poster">
-                    <img src="C:/Users/krish/.gemini/antigravity/brain/e3275172-d9d1-4cbe-b16d-d8990c82aa55/uploaded_image_0_1767792875220.jpg"
-                        alt="Avengers: Doomsday Poster" class="poster-image">
+                    <img src="assets/avengers.jpg" alt="Avengers: Doomsday Poster" class="poster-image">
                 </div>
                 <div class="movie-info">
                     <h2 class="movie-title">Avengers: Doomsday</h2>
@@ -38,8 +37,7 @@
             <!-- Movie Box 2 -->
             <div class="movie-box" id="duneBox">
                 <div class="movie-poster">
-                    <img src="C:/Users/krish/.gemini/antigravity/brain/e3275172-d9d1-4cbe-b16d-d8990c82aa55/uploaded_image_1767793386451.jpg"
-                        alt="Dune: Part Three Poster" class="poster-image">
+                    <img src="assets/dune.jpg" alt="Dune: Part Three Poster" class="poster-image">
                 </div>
                 <div class="movie-info">
                     <h2 class="movie-title">Dune: Part Three</h2>
@@ -50,8 +48,7 @@
             <!-- Movie Box 3 -->
             <div class="movie-box" id="spidermanBox">
                 <div class="movie-poster">
-                    <img src="C:/Users/krish/.gemini/antigravity/brain/e3275172-d9d1-4cbe-b16d-d8990c82aa55/uploaded_image_1767793548315.png"
-                        alt="Spider-Man: Brand New Day Poster" class="poster-image">
+                    <img src="assets/spiderman.png" alt="Spider-Man: Brand New Day Poster" class="poster-image">
                 </div>
                 <div class="movie-info">
                     <h2 class="movie-title">Spider-Man: Brand New Day</h2>
@@ -62,8 +59,7 @@
             <!-- Movie Box 4 -->
             <div class="movie-box" id="odysseyBox">
                 <div class="movie-poster">
-                    <img src="C:/Users/krish/.gemini/antigravity/brain/e3275172-d9d1-4cbe-b16d-d8990c82aa55/uploaded_image_1767793807053.png"
-                        alt="The Odyssey Poster" class="poster-image">
+                    <img src="assets/odyssey.png" alt="The Odyssey Poster" class="poster-image">
                 </div>
                 <div class="movie-info">
                     <h2 class="movie-title">The Odyssey</h2>
@@ -123,9 +119,9 @@
                     "One of the most anticipated & highest-grossing films of the year"
                 ],
                 trailers: [
-                    "https://www.youtube.com/embed/kH1XlwHQv9o?si=-l4yzDJOK9jRX-WC&amp;controls=0&amp;start=1",
-                    "https://www.youtube.com/embed/1clWprLC5Ak?si=PmtnGkytvgPDYits&amp;controls=0&amp;start=1",
-                    "https://www.youtube.com/embed/UiMg566PREA?si=KgFOUmUhDkf1E0Zs&amp;controls=0&amp;start=1"
+                    "https://www.youtube.com/embed/kH1XlwHQv9o?modestbranding=1&rel=0&iv_load_policy=3&enablejsapi=1",
+                    "https://www.youtube.com/embed/1clWprLC5Ak?modestbranding=1&rel=0&iv_load_policy=3&enablejsapi=1",
+                    "https://www.youtube.com/embed/UiMg566PREA?modestbranding=1&rel=0&iv_load_policy=3&enablejsapi=1"
                 ]
             },
             dune: {
@@ -195,6 +191,8 @@
                 modalTrailers.innerHTML = data.trailers.map(url => `
                     <div class="video-container">
                         <iframe src="${url}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        <div class="video-blocker blocker-top"></div>
+                        <div class="video-blocker blocker-bottom-right"></div>
                     </div>
                 `).join('');
             } else {
