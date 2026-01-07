@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Upcoming English Movies Releasing in 2026 - Stay updated with the latest movie releases">
+    <title>2026 Movie Releases | Upcoming English Movies</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h1>🎬 2026 Movie Releases</h1>
+            <p class="tagline">Your guide to upcoming movies</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="movies-grid">
+            <!-- Movie Box 1 -->
+            <div class="movie-box" id="avengersBox">
+                <div class="movie-poster">
+                    <img src="C:/Users/krish/.gemini/antigravity/brain/e3275172-d9d1-4cbe-b16d-d8990c82aa55/uploaded_image_0_1767792875220.jpg"
+                        alt="Avengers: Doomsday Poster" class="poster-image">
+                </div>
+                <div class="movie-info">
+                    <h2 class="movie-title">Avengers: Doomsday</h2>
+                    <p class="release-date">Release Date: December 18, 2026</p>
+                </div>
+            </div>
+
+            <!-- Movie Box 2 -->
+            <div class="movie-box" id="duneBox">
+                <div class="movie-poster">
+                    <img src="C:/Users/krish/.gemini/antigravity/brain/e3275172-d9d1-4cbe-b16d-d8990c82aa55/uploaded_image_1767793386451.jpg"
+                        alt="Dune: Part Three Poster" class="poster-image">
+                </div>
+                <div class="movie-info">
+                    <h2 class="movie-title">Dune: Part Three</h2>
+                    <p class="release-date">Release Date: December 18, 2026</p>
+                </div>
+            </div>
+
+            <!-- Movie Box 3 -->
+            <div class="movie-box" id="spidermanBox">
+                <div class="movie-poster">
+                    <img src="C:/Users/krish/.gemini/antigravity/brain/e3275172-d9d1-4cbe-b16d-d8990c82aa55/uploaded_image_1767793548315.png"
+                        alt="Spider-Man: Brand New Day Poster" class="poster-image">
+                </div>
+                <div class="movie-info">
+                    <h2 class="movie-title">Spider-Man: Brand New Day</h2>
+                    <p class="release-date">Release Date: July 31, 2026</p>
+                </div>
+            </div>
+
+            <!-- Movie Box 4 -->
+            <div class="movie-box" id="odysseyBox">
+                <div class="movie-poster">
+                    <img src="C:/Users/krish/.gemini/antigravity/brain/e3275172-d9d1-4cbe-b16d-d8990c82aa55/uploaded_image_1767793807053.png"
+                        alt="The Odyssey Poster" class="poster-image">
+                </div>
+                <div class="movie-info">
+                    <h2 class="movie-title">The Odyssey</h2>
+                    <p class="release-date">Release Date: July 17, 2026</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Movie Details Modal -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal-content">
+            <button class="close-modal" id="closeModal">&times;</button>
+            <div class="modal-header">
+                <h2 id="modalTitle">Movie Title</h2>
+            </div>
+            <div class="modal-meta" id="modalMeta">
+                <!-- Data populated by JS -->
+            </div>
+            <div class="modal-section">
+                <h3>Overview</h3>
+                <p id="modalOverview">Overview text goes here.</p>
+            </div>
+            <div class="modal-section">
+                <h3>Key Highlights</h3>
+                <ul class="highlights-list" id="modalHighlights">
+                    <!-- Highlights populated by JS -->
+                </ul>
+            </div>
+            <div class="modal-section" id="trailersSection" style="display: none;">
+                <h3>Official Trailers</h3>
+                <div class="trailers-grid" id="modalTrailers">
+                    <!-- Trailers populated by JS -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Movie Releases Info. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const movieData = {
+            avengers: {
+                title: "Avengers: Doomsday (2026)",
+                release: "December 18, 2026",
+                studio: "Marvel Studios",
+                phase: "Phase Six",
+                overview: "A massive MCU crossover where the Avengers, X-Men, Fantastic Four, and Wakandan allies unite to stop Doctor Doom, a multiversal threat capable of ending all realities.",
+                highlights: [
+                    "Villain: Doctor Doom",
+                    "Directors: Russo Brothers",
+                    "Cast includes Robert Downey Jr., Chris Hemsworth, Anthony Mackie, Paul Rudd, and original X-Men actors",
+                    "One of the most anticipated & highest-grossing films of the year"
+                ],
+                trailers: [
+                    "https://www.youtube.com/embed/kH1XlwHQv9o?si=-l4yzDJOK9jRX-WC&amp;controls=0&amp;start=1",
+                    "https://www.youtube.com/embed/1clWprLC5Ak?si=PmtnGkytvgPDYits&amp;controls=0&amp;start=1",
+                    "https://www.youtube.com/embed/UiMg566PREA?si=KgFOUmUhDkf1E0Zs&amp;controls=0&amp;start=1"
+                ]
+            },
+            dune: {
+                title: "Dune: Part Three",
+                release: "2026 (Expected)",
+                studio: "Legendary Pictures / Warner Bros.",
+                phase: "N/A",
+                overview: "The final chapter of Denis Villeneuve’s Dune trilogy, continuing Paul Atreides’ rise and the consequences of his rule across the galaxy.",
+                highlights: [
+                    "Directed by Denis Villeneuve",
+                    "Based on Dune Messiah by Frank Herbert",
+                    "Epic sci-fi scale with strong global box-office potential",
+                    "One of the most anticipated sequels of the year"
+                ]
+            },
+            spiderman: {
+                title: "Spider-Man: Brand New Day",
+                release: "July 31, 2026",
+                studio: "Marvel Studios / Sony Pictures",
+                phase: "Phase Six",
+                overview: "A new chapter in the Spider-Man saga following Peter Parker’s life after his identity reset, featuring returning faces and fresh twists in the MCU’s Phase Six.",
+                highlights: [
+                    "Directed by Destin Daniel Cretton",
+                    "Stars Tom Holland as Spider-Man and Zendaya as MJ",
+                    "Major Marvel blockbuster with strong box-office expectations"
+                ]
+            },
+            odyssey: {
+                title: "The Odyssey",
+                release: "July 17, 2026",
+                studio: "Universal Pictures",
+                phase: "N/A",
+                overview: "Christopher Nolan’s epic adaptation of Homer’s Odyssey, following Odysseus’ perilous journey home after the Trojan War, blending myth with cinematic spectacle.",
+                highlights: [
+                    "Directed by Christopher Nolan",
+                    "Stars Matt Damon, Zendaya, Tom Holland and others",
+                    "Filmed entirely on IMAX 70 mm, making it a major visual event"
+                ]
+            }
+        };
+
+        const modalOverlay = document.getElementById('modalOverlay');
+        const closeModal = document.getElementById('closeModal');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalMeta = document.getElementById('modalMeta');
+        const modalOverview = document.getElementById('modalOverview');
+        const modalHighlights = document.getElementById('modalHighlights');
+        const trailersSection = document.getElementById('trailersSection');
+        const modalTrailers = document.getElementById('modalTrailers');
+
+        const openModal = (movieKey) => {
+            const data = movieData[movieKey];
+            if (!data) return;
+
+            modalTitle.textContent = data.title;
+            modalMeta.innerHTML = `
+                <p><span>Release:</span> ${data.release}</p>
+                <p><span>Studio:</span> ${data.studio}</p>
+                ${data.phase !== 'N/A' ? `<p><span>MCU Phase:</span> ${data.phase}</p>` : ''}
+            `;
+            modalOverview.textContent = data.overview;
+            modalHighlights.innerHTML = data.highlights.map(h => `<li>${h}</li>`).join('');
+
+            // Handle trailers
+            if (data.trailers && data.trailers.length > 0) {
+                trailersSection.style.display = 'block';
+                modalTrailers.innerHTML = data.trailers.map(url => `
+                    <div class="video-container">
+                        <iframe src="${url}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
+                `).join('');
+            } else {
+                trailersSection.style.display = 'none';
+                modalTrailers.innerHTML = '';
+            }
+
+            modalOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        };
+
+        const hideModal = () => {
+            modalOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+            // Clear iframes on close to stop playback
+            modalTrailers.innerHTML = '';
+        };
+
+        document.getElementById('avengersBox').addEventListener('click', () => openModal('avengers'));
+        document.getElementById('duneBox').addEventListener('click', () => openModal('dune'));
+        document.getElementById('spidermanBox').addEventListener('click', () => openModal('spiderman'));
+        document.getElementById('odysseyBox').addEventListener('click', () => openModal('odyssey'));
+
+        closeModal.addEventListener('click', hideModal);
+        modalOverlay.addEventListener('click', (e) => {
+            if (e.target === modalOverlay) hideModal();
+        });
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modalOverlay.classList.contains('active')) hideModal();
+        });
+    </script>
+</body>
+
+</html>
