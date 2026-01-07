@@ -310,49 +310,11 @@ main {
 
 .video-container iframe {
     position: absolute;
-    top: -10%;
-    /* Proportionally hide header */
-    left: -2%;
-    /* Slightly overflow to hide edge artifacts */
-    width: 104%;
-    /* Compensate for left offset to fill width */
-    height: 120%;
-    /* Fill the container while maintaining top/bottom crop */
-    border: 0;
-}
-
-/* Protection layer to prevent clicking out to YouTube */
-.video-container::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 10;
-    pointer-events: none;
-    /* Allow play button through, but we can refine this */
-}
-
-/* Specific blockers for YouTube links */
-.video-blocker {
-    position: absolute;
-    z-index: 10;
-    background: transparent;
-}
-
-.blocker-top {
     top: 0;
     left: 0;
     width: 100%;
-    height: 60px;
-}
-
-.blocker-bottom-right {
-    bottom: 0;
-    right: 0;
-    width: 100px;
-    height: 50px;
+    height: 100%;
+    border: 0;
 }
 
 

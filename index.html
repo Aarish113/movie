@@ -4,8 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="Upcoming English Movies Releasing in 2026 - Stay updated with the latest movie releases">
+    <meta name="description" content="Upcoming Movies Releasing in 2026 - Stay updated with the latest movie releases">
     <title>2026 Movie Releases | Upcoming movies</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -159,6 +158,9 @@
                     "Directed by Christopher Nolan",
                     "Stars Matt Damon, Zendaya, Tom Holland and others",
                     "Filmed entirely on IMAX 70 mm, making it a major visual event"
+                ],
+                trailers: [
+                    "https://www.youtube.com/embed/Mzw2ttJD2qQ?modestbranding=1&rel=0&iv_load_policy=3&enablejsapi=1"
                 ]
             }
         };
@@ -191,8 +193,6 @@
                 modalTrailers.innerHTML = data.trailers.map(url => `
                     <div class="video-container">
                         <iframe src="${url}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                        <div class="video-blocker blocker-top"></div>
-                        <div class="video-blocker blocker-bottom-right"></div>
                     </div>
                 `).join('');
             } else {
