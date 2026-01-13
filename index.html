@@ -71,6 +71,39 @@
                     <p class="release-date">Release Date: July 17, 2026</p>
                 </div>
             </div>
+
+            <!-- Movie Box 5 -->
+            <div class="movie-box" id="toystory5Box">
+                <div class="movie-poster">
+                    <img src="toystory5.png" alt="Toy Story 5 Poster" class="poster-image">
+                </div>
+                <div class="movie-info">
+                    <h2 class="movie-title">Toy Story 5</h2>
+                    <p class="release-date">Release Date: 2026</p>
+                </div>
+            </div>
+
+            <!-- Movie Box 6 -->
+            <div class="movie-box" id="minions3Box">
+                <div class="movie-poster">
+                    <img src="minions3.png" alt="Minions 3 Poster" class="poster-image">
+                </div>
+                <div class="movie-info">
+                    <h2 class="movie-title">Minions 3</h2>
+                    <p class="release-date">Release Date: 2026</p>
+                </div>
+            </div>
+
+            <!-- Movie Box 7 -->
+            <div class="movie-box" id="angrybirds3Box">
+                <div class="movie-poster">
+                    <img src="angrybirds3.png" alt="The Angry Birds Movie 3 Poster" class="poster-image">
+                </div>
+                <div class="movie-info">
+                    <h2 class="movie-title">The Angry Birds Movie 3</h2>
+                    <p class="release-date">Release Date: 2026</p>
+                </div>
+            </div>
         </section>
     </main>
 
@@ -168,6 +201,42 @@
                 trailers: [
                     "https://www.youtube.com/embed/Mzw2ttJD2qQ"
                 ]
+            },
+            toystory5: {
+                title: "Toy Story 5",
+                release: "2026",
+                studio: "Pixar Animation Studios",
+                phase: "N/A",
+                overview: "Woody, Buzz, and the gang face a world where children are more attached to digital technology than traditional toys. As toys struggle to stay relevant, the film explores friendship, purpose, and adapting to change while honoring the legacy of growing up.",
+                highlights: [
+                    "Genre: Animation / Family",
+                    "Explores impact of digital technology on toys",
+                    "Returns of woody, buzz and the gang"
+                ]
+            },
+            minions3: {
+                title: "Minions 3",
+                release: "2026",
+                studio: "Illumination",
+                phase: "N/A",
+                overview: "The Minions return with their trademark chaos as they follow a new villain on a globe-trotting adventure. Their loyalty once again leads to unintended consequences, blending slapstick humor with fast-paced action and absurd comedy.",
+                highlights: [
+                    "Genre: Animation / Comedy",
+                    "Trademark chaos and slapstick humor",
+                    "New villain and globe-trotting adventure"
+                ]
+            },
+            angrybirds3: {
+                title: "The Angry Birds Movie 3",
+                release: "2026",
+                studio: "Rovio / Sony Pictures Animation",
+                phase: "N/A",
+                overview: "Red, Chuck, Bomb, and the rest of the flock face a powerful new threat that puts their island at risk. The story expands the Angry Birds universe with larger stakes, teamwork, and humor aimed at both kids and longtime fans.",
+                highlights: [
+                    "Genre: Animation / Adventure",
+                    "Larger stakes and teamwork",
+                    "Features Red, Chuck, Bomb and the flock"
+                ]
             }
         };
 
@@ -204,7 +273,7 @@
                     videoUrl.searchParams.set('enablejsapi', '1');
                     videoUrl.searchParams.set('origin', window.location.origin);
                     videoUrl.searchParams.set('widgetid', '1');
-                    
+
                     return `
                         <div class="video-container">
                             <iframe src="${videoUrl.toString()}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
@@ -232,6 +301,9 @@
         document.getElementById('duneBox').addEventListener('click', () => openModal('dune'));
         document.getElementById('spidermanBox').addEventListener('click', () => openModal('spiderman'));
         document.getElementById('odysseyBox').addEventListener('click', () => openModal('odyssey'));
+        document.getElementById('toystory5Box').addEventListener('click', () => openModal('toystory5'));
+        document.getElementById('minions3Box').addEventListener('click', () => openModal('minions3'));
+        document.getElementById('angrybirds3Box').addEventListener('click', () => openModal('angrybirds3'));
 
         closeModal.addEventListener('click', hideModal);
         modalOverlay.addEventListener('click', (e) => {
