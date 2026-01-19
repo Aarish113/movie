@@ -157,9 +157,9 @@
                     "One of the most anticipated & highest-grossing films of the year"
                 ],
                 trailers: [
-                    "https://www.youtube.com/embed/kH1XlwHQv9o",
-                    "https://www.youtube.com/embed/1clWprLC5Ak",
-                    "https://www.youtube.com/embed/UiMg566PREA"
+                    "https://www.youtube.com/embed/f17J3AXVK5w",
+                    "https://www.youtube.com/embed/aZXBFirj6b4",
+                    "https://www.youtube.com/embed/399Ez7WHK5s"
                 ]
             },
             dune: {
@@ -265,7 +265,7 @@
             // Handle trailers
             if (data.trailers && data.trailers.length > 0) {
                 trailersSection.style.display = 'block';
-                modalTrailers.innerHTML = data.trailers.map(url => {
+                modalTrailers.innerHTML = data.trailers.map((url, index) => {
                     const videoUrl = new URL(url);
                     videoUrl.searchParams.set('modestbranding', '1');
                     videoUrl.searchParams.set('rel', '0');
@@ -273,6 +273,11 @@
                     videoUrl.searchParams.set('enablejsapi', '1');
                     videoUrl.searchParams.set('origin', window.location.origin);
                     videoUrl.searchParams.set('widgetid', '1');
+
+                    // Autoplay the first video for Avengers
+                    if (movieKey === 'avengers' && index === 0) {
+                        videoUrl.searchParams.set('autoplay', '1');
+                    }
 
                     return `
                         <div class="video-container">
