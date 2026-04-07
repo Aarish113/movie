@@ -627,9 +627,36 @@
                 preloader.classList.add('fade-out');
                 setTimeout(() => {
                     preloader.remove();
+                    // Initialize scroll reveal once preloader is gone for smoother timing
+                    initScrollReveal();
                 }, 800);
             }, 500); // Slight delay for aesthetic feel
         });
+
+        // Scroll Reveal Logic
+        const initScrollReveal = () => {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px' // Reveals slightly before hitting the screen edge
+            };
+
+            const revealObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach((entry, index) => {
+                    if (entry.isIntersecting) {
+                        // Add a subtle staggered delay for multiple items appearing at once
+                        setTimeout(() => {
+                            entry.target.classList.add('reveal-active');
+                        }, index * 50); 
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            const movieBoxes = document.querySelectorAll('.movie-box');
+            movieBoxes.forEach(box => {
+                revealObserver.observe(box);
+            });
+        };
     </script>
 
 </body>
