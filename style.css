@@ -268,7 +268,7 @@ main.container {
 
 .movie-poster {
     width: 100%;
-    height: 380px;
+    height: 420px;
     background: transparent;
     display: flex;
     align-items: center;
@@ -413,23 +413,35 @@ main.container {
 }
 
 .movie-info {
-    padding: 30px;
-    background: transparent;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(to top, rgba(5, 5, 8, 0.92) 0%, rgba(5, 5, 8, 0.55) 65%, transparent 100%);
+    backdrop-filter: blur(14px) saturate(180%);
+    -webkit-backdrop-filter: blur(14px) saturate(180%);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 16px 20px;
+    z-index: 2;
 }
 
 .movie-title {
     font-family: var(--font-heading);
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     color: #ffffff;
-    margin-bottom: 8px;
+    margin-bottom: 4px;
     font-weight: 600;
-    letter-spacing: -0.5px;
+    letter-spacing: -0.4px;
+    line-height: 1.25;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
 }
 
 .release-date {
-    color: var(--text-secondary);
-    font-size: 0.9rem;
+    color: #e0e0e0;
+    font-size: 0.85rem;
     font-weight: 400;
+    opacity: 0.9;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7);
 }
 
 /* Trailers Grid */
@@ -624,34 +636,6 @@ footer p {
     .movies-grid {
         grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
         gap: 25px;
-    }
-
-    .movie-poster {
-        height: 420px; /* Full card height */
-    }
-
-    .movie-info {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        background: rgba(0, 0, 0, 0.3); /* Transparent overlay */
-        backdrop-filter: blur(12px) saturate(180%);
-        -webkit-backdrop-filter: blur(12px) saturate(180%);
-        padding: 15px 20px;
-        z-index: 2;
-    }
-
-    .movie-title {
-        font-size: 1.3rem;
-        margin-bottom: 2px;
-    }
-
-    .release-date {
-        font-size: 0.9rem;
-        color: #fff; /* Maximum visibility */
-        opacity: 1;
-        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5); /* extra contrast on light posters */
     }
 
     main {
